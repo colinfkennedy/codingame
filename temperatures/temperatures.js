@@ -16,14 +16,15 @@ for(i = 0; i < n; i++) {
     if(Math.abs(temperature) < Math.abs(closestToZero)) {
         printErr("Temp " + temperature + " is less than old closest: " + closestToZero);
         closestToZero = temperature;
-    } else if (Math.abs(temperature) === Math.abs(closestToZero)) {
-        closestToZero = Math.abs(temperature);
+    } else if (Math.abs(temperature) === Math.abs(closestToZero) && temperature > 0) {
+        closestToZero = temperature;
     }
 }
 
 if(n === 0) {
     closestToZero = 0;
 }
+
 printErr("Closest to Zero: " + closestToZero);
 
 print(closestToZero);
